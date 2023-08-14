@@ -37,7 +37,7 @@ def get_openai_embedding():
     openai_api_base = os.environ['OPENAI_API_BASE']
     openai_api_model = os.environ['OPENAI_API_MODEL']
 
-    return OpenAIEmbeddings(openai_api_key=openai_api_key, openai_api_base=openai_api_base, model_name=openai_api_model, chunk_size=1)
+    return OpenAIEmbeddings(openai_api_key=openai_api_key, chunk_size=1)
 
 def choose_embedding_provider():
     """Chooses and returns the appropriate embedding provider instance."""
