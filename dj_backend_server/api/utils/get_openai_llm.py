@@ -30,10 +30,14 @@ def get_openai_llm():
     """Returns OpenAI instance configured from environment variables"""
     
     openai_api_key = os.environ['OPENAI_API_KEY']
+    openai_api_base = os.environ['OPENAI_API_BASE']
+    openai_api_model = os.environ['OPENAI_API_MODEL']
     
     return OpenAI(
         temperature=0,
-        openai_api_key=openai_api_key
+        openai_api_key=openai_api_key,
+        openai_api_base=openai_api_base,
+        model_name=openai_api_model
     )
         
 # recommend not caching initially, and optimizing only if you observe a clear performance benefit from caching the clients. 
